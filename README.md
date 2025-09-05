@@ -1,1 +1,1 @@
-# Inventory-Order-Management-System
+# Inventory & Order Management System
