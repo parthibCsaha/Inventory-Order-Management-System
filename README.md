@@ -12,7 +12,7 @@ It helps businesses manage products, suppliers, customers, and stock operations 
 - **Role-based Access Control (RBAC)** — `ADMIN`, `MANAGER`, and `STAFF`.
 - All sensitive endpoints are secured and require valid JWT tokens.
 
-### 📦 Inventory Management
+###  Inventory Management
 - Manage **products** with details like SKU, category, price, and reorder level.
 - **Inventory alerts** are automatically triggered when stock drops below a threshold.
 - Real-time tracking of stock transactions (inbound and outbound).
