@@ -202,11 +202,11 @@ classDiagram
 
 ## Security Design
 
-    Passwords hashed with BCrypt.
+   - Passwords hashed with BCrypt.
     
-    JWT authentication using Bearer tokens.
+   - JWT authentication using Bearer tokens.
     
-    Role-based method security using annotations like:
+   - Role-based method security using annotations like:
         @PreAuthorize("hasRole('ADMIN')")
 
 
