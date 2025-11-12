@@ -42,8 +42,8 @@ It helps businesses manage products, suppliers, customers, and stock operations 
 The project follows a **modular, layered architecture** with clear separation of concerns:
 
 
----classDiagram
-
+```
+classDiagram
     class User {
         +Long id
         +String username
@@ -104,15 +104,16 @@ The project follows a **modular, layered architecture** with clear separation of
         +boolean resolved
     }
 
-    %% Relationships (clean & explicit)
-    Supplier "1" -- "many" Product : supplies
-    Customer "1" -- "many" Order : places
-    Order "1" -- "many" OrderItem : contains
-    Product "1" -- "many" OrderItem : referenced_by
-    Product "1" -- "many" StockTransaction : affects
-    User "1" -- "many" AuditLog : performs
-    Product "1" -- "many" InventoryAlert : triggers
-    Order "many" -- "1" Customer : belongs_to
+    %% --- Relationships ---
+    Supplier "1" --> "many" Product : supplies
+    Customer "1" --> "many" Order : places
+    Order "1" --> "many" OrderItem : contains
+    Product "1" --> "many" OrderItem : included_in
+    Product "1" --> "many" StockTransaction : affects
+    Product "1" --> "many" InventoryAlert : triggers
+    User "1" --> "many" AuditLog : performs
+    Order "many" --> "1" Customer : belongs_to
+
 
 ```
 
