@@ -42,7 +42,7 @@ It helps businesses manage products, suppliers, customers, and stock operations 
 The project follows a **modular, layered architecture** with clear separation of concerns:
 
 
-```
+```mermaid
 classDiagram
     class User {
         +Long id
