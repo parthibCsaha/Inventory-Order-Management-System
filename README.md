@@ -42,12 +42,8 @@ It helps businesses manage products, suppliers, customers, and stock operations 
 The project follows a **modular, layered architecture** with clear separation of concerns:
 
 
----
+---classDiagram
 
-##  Entity Relationship Diagram (ERD)
-
-```mermaid
-classDiagram
     class User {
         +Long id
         +String username
@@ -108,13 +104,16 @@ classDiagram
         +boolean resolved
     }
 
-    %% Relationships
-    Supplier "1" -- "many" Product : supplies >
-    Customer "1" -- "many" Order : places >
-    Order "1" -- "many" OrderItem : contains >
-    Product "1" -- "many" OrderItem : linked >
-    Product "1" -- "many" StockTransaction : affects >
-    User "1" -- "many" AuditLog : performs >
+    %% Relationships (clean & explicit)
+    Supplier "1" -- "many" Product : supplies
+    Customer "1" -- "many" Order : places
+    Order "1" -- "many" OrderItem : contains
+    Product "1" -- "many" OrderItem : referenced_by
+    Product "1" -- "many" StockTransaction : affects
+    User "1" -- "many" AuditLog : performs
+    Product "1" -- "many" InventoryAlert : triggers
+    Order "many" -- "1" Customer : belongs_to
+
 ```
 
 ## Technologies Used
